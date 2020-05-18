@@ -9,7 +9,7 @@ const NewTodoForm = ({ todos, onCreatePress }) => {
 
   return (
     <div>
-      <div className="field columns">
+      <div className="field columns input-wrap">
         <div className="control column is-6 is-offset-2">
           <input
             className="input is-small is-primary is-rounded"
@@ -39,6 +39,12 @@ const NewTodoForm = ({ todos, onCreatePress }) => {
       {errorFlag && (
         <div className="columns">
           <div className="notification is-danger column is-7 is-offset-2">
+            <button
+              className="delete"
+              onClick={() => {
+                setErrorFlag(false);
+              }}
+            ></button>
             <p>Please type something!</p>
           </div>
         </div>
